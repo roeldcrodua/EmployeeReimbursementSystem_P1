@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERS Password Reset Page</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel = "icon" href = "../image/ers-logo.png" type = "image/x-icon">
+</head>
+<body>
+    <div class="container text-center navbar-dark bg-black p-2">
+        <a class="text-decoration-none h1 fw-bolder" id="title" href="#">Employee Reimbursement System</a>
+    </div>
+    <div class="form-popup">
+        <div id="form-info" class="border-5">
+            <form id="resetInfo" class="form-success text-center">
+                <h5>Password was reset</h5>
+                <h6 id="email-message"></h6>
+                <button class="btn btn-secondary" id="ok" type="submit">OK</button>
+            </form>
+        </div>
+         <form id="signupForm" class="form-container">
+            <h2 class="fw-bolder mb-4">Reset Password</h2>
+
+            <input type="text" id="userName" placeholder="Username" >
+            <div id="validate-username" class="fst-italic text-danger fw-bolder">
+            </div>
+
+            <input type="password" id="oldPassword" placeholder="Old Password" >             
+            <div id="old-password-message" class="fst-italic text-danger fw-bolder">
+            </div>
+
+            <input type="password" id="newPassword" placeholder="New Password" >
+            <div id="new-password-message" class="fst-italic text-danger fw-bolder">
+            </div>
+
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" >
+            <div id="confirm-password-message" class="fst-italic text-danger fw-bolder">
+            </div>
+            
+            <button type="submit" class="btn-success mt-3" id="submit-reset">Submit</button>
+            <button class=" btn-danger mt-2" id="home">Back to Home Page</button>
+       </form>        
+    </div>
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/profile.js"></script>
+
+</body>
+</html>

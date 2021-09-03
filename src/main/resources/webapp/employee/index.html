@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERS Employee's Homepage</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/employee.css">
+    <link rel="icon" href="../image/ers-logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container text-center navbar-dark bg-black p-2">
+        <a class="text-decoration-none h1 fw-bolder" id="title" href="#">Employee Reimbursement System</a>
+    </div>
+    <div id="reimbursement-form-container">
+        <form id="reimbursement-Form" class="reimbursement-form">
+            <div class="m-2" id="reimbursement-information-container">
+                <div class="fw-bold mb-3 text-center">
+                    <h2 class="fw-bolder">Reimbursement Form</h2>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Reimbursement No.</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-reimb-id">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">File Owner</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="file-owner">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Reimbursement Type</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-reimb-type">
+                    <select id="typeId" name="typeId" class="bg-light text-black mt-2 text-uppercase fw-bold" required>
+                        <option value="" selected>-- Select Type --</option>
+                        <option value="1">Lodging</option>
+                        <option value="2">Travel</option>
+                        <option value="3">Food</option>
+                        <option value="4">Other</option>
+                    </select>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Description</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-description" required>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Amount</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-amount" required>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Date Submitted</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="date-submitted">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Status</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="reimb-status">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Date Processed</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="date-processed">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Processed By</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="processed-by">
+                </div>
+                <div id="error-message"></div>
+                <div class="reimbursement-btn">
+                    <button type="submit" class="btn btn-success visually-hidden" id="create-new-btn">Submit</button>
+                    <button class="btn btn-light visually-hidden" id="update-btn">Update</button>
+                    <button class="btn btn-danger" id="cancel-btn" type="reset">Close</button>
+                </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class=" mt-5 w-100 d-inline-flex justify-content-center" id="account-profile">
+            <div class="account-details">
+                <h3 class="fw-bolder">Account Profile</h3>
+                <div>
+                    <div>
+                        <button class="btn-outline-warning" id="reset-password-btn">Reset Password</button>
+                    </div>
+                    <div>
+                        <button class="btn-outline-danger" id="logout-btn">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-3">
+                <img width="200" height="200" src="https://picsum.photos/200">
+            </div>
+            <div class="ms-5" id="account-information-container">
+            </div>
+        </div>
+        <div class=" mt-5 mb-5 w-100 d-inline-flex justify-content-center">
+            <div id="reimbursement-list" class="w-100 text-start ">
+                <div id="table-title" class="justify-content-between">
+                    <div>
+                        <h3 class="fw-bolder">Reimbursements</h3>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-outline-success" id="create-btn">Create New Reimbursement</button>
+                    </div>
+                </div>
+                <table id="reimbursement-table" class="table text-start table-hover table-responsive table-responsive-sm">
+                    <thead>
+                        <tr class="table-info ">
+                            <th scope="col">ID</th>
+                            <th class="ps-5 text-start" scope="col">Type</th>
+                            <th class="ps-5 text-start" scope="col">Description</th>
+                            <th class="ps-5 text-start" scope="col">Status</th>
+                            <th class="ps-5 text-start" scope="col">Amount</th>
+                            <th class="ps-5 text-start" scope="col">Date Submitted</th>
+                            <th class="ps-5 text-start" scope="col">Date Resolved</th>
+                            <th class="ps-5 text-start" scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/employee.js"></script>
+</body>
+
+</html>

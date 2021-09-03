@@ -1,0 +1,35 @@
+/* The popup form - hidden by default */
+body {
+  background-image: url(../image/ers.png);
+  background-size: 100%;
+  background-repeat: repeat;
+  
+
+}
+
+#reimbursement-form-container, .reimbursement-btn, #table-title{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+#reimbursement-Form{
+  display: block;
+  max-width: 600px;
+  padding: 30px;
+  margin: 20px;
+  background-color: #04AA6D;
+  border-radius: 10px;
+  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 0 10px rgba(0,0,0,0.4);
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.infoText{
+  display: flex;
+  justify-content: space-between;
+}
+
+#input-reimb-type, #typeId, #reimb-status, #statusId{
+  display: none;
+}

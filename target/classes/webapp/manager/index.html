@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERS Manager's Homepage</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/manager.css">
+    <link rel = "icon" href = "../image/ers-logo.png" type = "image/x-icon">
+</head>
+<body>
+    <div class="container text-center navbar-dark bg-black p-2">
+        <a class="text-decoration-none h1 fw-bolder" id="title" href="#">Employee Reimbursement System</a>
+    </div>
+
+    <div id="reimbursement-form-container">
+        <form id="reimbursement-Form" class="reimbursement-form">
+            <div class="m-2" id="reimbursement-information-container"> 
+                <div class="fw-bold mb-3 text-center">
+                    <h2 class="fw-bolder">Reimbursement Form</h2>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Reimbursement No.</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-reimb-id">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">File Owner</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="file-owner">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Reimbursement Type</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-reimb-type">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Description</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-description" required>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Amount</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="input-amount" required>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Date Submitted</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="date-submitted">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Status</label>
+                    <select id="statusId" name="statusId" class="bg-light text-black mt-2  text-uppercase fw-bold" required>
+                        <option value="0" selected>-- Resolution Action --</option>                        
+                        <option value="2">Approved</option>
+                        <option value="3">Denied</option>
+                    </select>
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Date Processed</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="date-processed">
+                </div>
+                <div class="infoText mb-4">
+                    <label class="text-capitalize text-black fw-bolder">Processed By</label>
+                    <input class="fw-bold ms-5" type="text" disabled id="processed-by">
+                </div>
+                <div id="error-message"></div>
+            <div class="reimbursement-btn">
+                <button type="submit" class="btn btn-success" id="create-new-btn">Submit</button>
+                <button class="btn btn-danger" id="cancel-btn" type="reset">Close</button>
+            </div> 
+        </form>
+    </div>
+    <div class="page-container">
+    <div class="mt-5 w-100 d-inline-flex justify-content-center"  id="account-profile">
+        <div class="account-details">
+            <h3 class="fw-bolder">Account Profile</h3>           
+            <div>
+                <div>
+                    <button class=" btn-outline-info" id="sign-up-btn">Register New User</button>
+                </div>
+                <div>
+                    <button class="btn-outline-warning" id="reset-password-btn">Reset Password</button>
+                </div>   
+                <div>
+                    <button class="btn-outline-danger" id="logout-btn">Logout</button>
+                </div>              
+           </div>
+        </div>       
+        <div class="ms-3">
+            <img width="200" height="200" src="https://picsum.photos/200">
+        </div>
+        <div class="ms-5" id="account-information-container"> 
+        </div>             
+    </div>
+
+    <div class=" mt-5 mb-5 w-100 d-inline-flex justify-content-center">
+        <div id="reimbursement-list-pending" class="w-75 text-start ">
+            <div id="table-pending-title" class="justify-content-between">
+                <div>
+                    <h3 class="fw-bolder">Pending Reimbursement Queue</h3>
+                </div>                           
+            </div>
+            <table id="reimbursement-table-pending" class="table text-center">
+                <thead>
+                <tr class="table-info">
+                    <th scope="col">ID No</th>
+                    <th scope="col">Type</th>
+                    <th class="ps-5 text-start" scope="col">Description</th>
+                    <th scope="col">Amount</th>
+                    <th class="ps-5 text-start" scope="col">Date Submitted</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class=" mt-5 mb-5 w-100 d-inline-flex justify-content-center">
+        <div id="reimbursement-list-resolved" class="w-75 text-start ">
+            <div id="table-resolved-title" class="justify-content-between">
+                <div>
+                    <h3 class="fw-bolder">Resolved Reimbursement List</h3>
+                </div>                           
+            </div>
+            <table id="reimbursement-table-resolved" class="table text-center">
+                <thead>
+                <tr class="table-info fw-bolder">
+                    <th scope="col">ID No</th>
+                    <th class="ps-5 text-start" scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Amount</th>
+                    <th class="ps-5 text-start" scope="col">Date Submitted</th>
+                    <th class="ps-5 text-start" scope="col">Date Resolved</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERS Registration Page</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel = "icon" href = "../image/ers-logo.png" type = "image/x-icon">
+</head>
+<body>
+    <div class="container text-center navbar-dark bg-black p-2">
+        <a class="text-decoration-none h1 fw-bolder" id="title" href="#">Employee Reimbursement System</a>
+    </div>
+    <div class="form-popup">
+         <form id="signupForm" class="form-container">
+            <h3 class="fw-bolder mb-4 text-center">Registration Form</h3>
+
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="text" id="userName" placeholder="Username" required> 
+            
+            <div id="signup-username-message" class="fst-italic text-warning">
+            </div>
+            <input type="password" id="password" placeholder="Password" disabled required>            
+            <input type="email" id="email" placeholder="Email" required >
+            <div id="signup-email-message" class="fst-italic text-warning">
+            </div>
+            <select id="roleId" name="roleId" class="btn bg-light text-black mt-2" required>
+                <option value="1" selected>Employee</option>
+                <option value="2">Manager</option>
+            </select>
+            <button class="btn btn-success mt-3">Submit</button>
+            <button class=" btn-danger mt-2" id="home">Back to Home Page</button>
+        </form>        
+    </div>
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/signup.js"></script>
+
+</body>
+</html>
