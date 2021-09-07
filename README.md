@@ -105,3 +105,6 @@ If you’re having trouble wrapping your head around how to start, here is a pre
 
 ### Reset Password Page
 ![image](https://user-images.githubusercontent.com/65931708/132283038-2a0a9b83-f48b-4285-91c2-d1024e796a59.png)
+
+### Register new user employee
+![image](https://user-images.githubusercontent.com/65931708/132283437-9e076ac2-0726-441c-a38b-8c144225b587.png)
